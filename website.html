@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="C:\Users\HP\Downloads\BTS\OneDrive\Documents\Visual Studio 2022\gadget price prediction\style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Car price prediction</title>
+</head>
+<body class="bg-dark">
+    <div class="container">
+        <div class="row">
+             <div class="card mt-50" style="width: 100%; height:100%;">
+
+               <div class="card-header">
+                    <div class="col-12" style="text-align: center">
+                        <h1>Welcome to Car Price Prediction </h1>
+                    </div>
+               </div>
+               <div class="card-body">
+                   <form method="post" action="#" accept-charset="utf-8">
+                       <div class="col-10 form-group" style="text-align:center">
+                             <label><b>Select Company:</b></label>
+                              <select class="selectpicker form-control" id="company" name="company" required="1">
+
+                                   {% for company in companies %}
+                                     <option value=" {{ company }} ">{{ company }}</option>
+                                   {% endfor %}
+                              </select>
+                       </div>
+                       <div class="col-10 form-group " style="text-align:center ">
+                            <label><b>Select Model:</b></label>
+                            <select class="selectpicker form-control " id="car_model " name="car_model " required="1 ">
+
+                              {% for model in car_model %}
+                                 <option value="{{ model }} ">{{ model }}</option>
+                              {% endfor %}
+                            </select>
+                        </div>
+                       <div class="col-10 form-group " style="text-align:center ">
+                            <label><b>Select Year of Purchase:</b></label>
+                            <select class="selectpicker form-control " id="year " name="year" required="1 ">
+                                {% for years in year %}
+                                  <option value="{{ year }} ">{{ year }}</option>
+                                {% endfor % }
+                            </select>
+                        </div>
+                       <div class="col-10 form-group " style="text-align:center ">
+                            <label><b>Select Fuel Type:</b></label>
+                            <select class="selectpicker form-control" id="fuel_type" name="fuel_type" required="1 ">
+                                {% for fuel_type in fuel_type %}
+                                  <option value="{{ fuel_type }} ">{{ fuel_type }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                       <div class="col-10 form-group " style="text-align:center ">
+                            <label><b>Enter Number of Kilometers:</b></label>
+                            <input class="form-control " type="text " id="kilo_driven " name="kilo_driven " placeholder="Enter Number of Kilometers Travelled: ">
+                        </div>
+                        <div class="col-10 form-control " style="text-align: center ">
+
+                            <button class="btn btn-primary form-control " onclick=" ">Price Prediction</button>
+                        </div>
+                       <form>
+                            <br>
+                            <div class="row ">
+                                <div class="col " style="text-align: center ">
+                                    <h3><span id="prediction "></span></h3>
+                                </div>
+                            </div>
+                        </form>
+                   </form>
+               </div>
+
+             </div>
+       </div>
+   </div>
+</body>
+
+</html>
